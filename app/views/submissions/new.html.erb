@@ -1,0 +1,17 @@
+<h1>Submission#new</h1>
+
+<%= form_with(model: @submission, local: true) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+
+    <%= f.submit "Submit" %>
+<% end %>

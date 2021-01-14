@@ -5,5 +5,6 @@ class Submission < ApplicationRecord
 
     validates :name, presence: true, length: { maximum: 255 }
     validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
+    validates :image, presence: true
     #validates :breed, presence: true
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'submit/form'
-  get 'submit/result'
+  get 'submissions/show'
+  get 'submissions/new'
   root 'application#hello'
+
+  resources :submissions
 end
