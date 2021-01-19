@@ -1,0 +1,17 @@
+<h1>Listing</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Breed</th>
+    <th>Image</th>
+  </tr>
+  <% @submissions.each do |submission| %>
+    <tr>
+      <td><%= submission.name %></td>
+      <td><%= submission.email %></td>
+      <td><%= submission.breed %></td>
+      <td><%= image_tag submission.image.variant(resize_to_limit: [100, 100]) %></td>
+    </tr>
+  <% end %>
+</table>
