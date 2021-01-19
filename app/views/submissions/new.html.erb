@@ -1,6 +1,8 @@
 <h1>Submission#new</h1>
 
 <%= form_with(model: @submission, local: true) do |f| %>
+    <%= render 'shared/error_messages' %>
+
     <%= f.label :name %>
     <%= f.text_field :name %>
 
