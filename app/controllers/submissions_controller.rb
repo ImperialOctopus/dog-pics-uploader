@@ -10,7 +10,7 @@ class SubmissionsController < ApplicationController
   def create
     @submission = Submission.new(submission_params)
     if @submission.save
-      flash[:success] = 'Welcome to the Sample App!'
+      flash[:success] = 'Record created'
       redirect_to @submission
     else
       render 'new'
@@ -26,7 +26,13 @@ class SubmissionsController < ApplicationController
   end
 
   def update
-    # update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      flash[:success] = 'Update saved'
+      redirect_to @submission
+    else
+      render 'edit'
+    end
   end
 
   def destroy
