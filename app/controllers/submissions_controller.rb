@@ -26,8 +26,8 @@ class SubmissionsController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
+    @submission = Submission.find(params[:id])
+    if @submission.update(submission_params)
       flash[:success] = 'Update saved'
       redirect_to @submission
     else
@@ -36,7 +36,9 @@ class SubmissionsController < ApplicationController
   end
 
   def destroy
-    # destroy
+    @user = User.find(params[:id])
+    flash[:success] = 'Record destroyed' if @user.destroy(user_params)
+    redirect_to 'index'
   end
 
   private
