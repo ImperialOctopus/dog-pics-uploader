@@ -11,7 +11,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.new(submission_params)
     if @submission.save
       flash[:success] = 'Record created'
-      redirect_to @submission
+      redirect_to :thanks
     else
       render 'new'
     end

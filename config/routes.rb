@@ -6,6 +6,8 @@ Rails
     # get 'submissions/new'
     root 'static_pages#index'
 
+    get '/thanks' => 'static_pages#thanks', :as => :thanks
+
     # Submissions routing
 
     resources :submissions, only: %i[new create]
