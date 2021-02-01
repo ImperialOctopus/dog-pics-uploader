@@ -2,17 +2,17 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Email</th>
     <th>Breed</th>
     <th>Image</th>
   </tr>
   <% @submissions.each do |submission| %>
     <tr>
       <td><%= submission.name %></td>
-      <td><%= submission.email %></td>
       <td><%= submission.breed %></td>
       <td>
-        <%= image_tag submission.image.variant(resize_to_limit: [100, 100]) %>
+        <%= link_to url_for(submission.image), target: :_blank do %>
+          <%= image_tag submission.image.variant(resize_to_limit: [100, 100]) %>
+        <% end %>
       </td>
       <td><%= link_to 'View', submission %></td>
       <td><%= link_to 'Edit', edit_submission_path(submission) %></td>

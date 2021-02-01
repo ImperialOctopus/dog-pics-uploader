@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DogPicsUploader</title>
+    <title>Give Me Your Dogs (Please)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -18,8 +18,13 @@
       message %></div>
         <% end %>
         <% if signed_in? %>
-          Signed in as: <%= current_user.email %>
-          <%= button_to 'Sign out', sign_out_path, method: :delete %>
+        <hr />
+          <p>
+            Signed in as: <%= current_user.email %>
+            <%= link_to "Home", "/submissions/new" %>
+            <%= link_to "List", "/submissions" %>
+            <%= button_to 'Sign out', sign_out_path, method: :delete %>
+          </p>
         <% end %>
         <%= render 'layouts/footer' %>
         <!-- <%= debug(params) if Rails.env.development? %> -->

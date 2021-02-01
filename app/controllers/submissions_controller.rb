@@ -31,16 +31,16 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
     if @submission.update(submission_params)
       flash[:success] = 'Update saved'
-      redirect_to :index
+      redirect_to :submissions
     else
       render 'edit'
     end
   end
 
   def destroy
-    @user = User.find(params[:id])
-    flash[:success] = 'Record destroyed' if @user.destroy(user_params)
-    redirect_to 'index'
+    @submission = Submission.find(params[:id])
+    flash[:success] = 'Submission destroyed' if @submission.destroy
+    redirect_to :submissions
   end
 
   private
@@ -49,8 +49,6 @@ class SubmissionsController < ApplicationController
     # It's mandatory to specify the nested attributes that should be permitted.
     # If you use `permit` with just the key that points to the nested attributes hash,
     # it will return an empty hash.
-    params
-      .require(:submission)
-      .permit(:name, :breed, :image, :authenticity_token, :commit)
+    params.permit(:name, :breed, :image, :authenticity_token, :commit)
   end
 end
