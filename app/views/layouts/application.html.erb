@@ -9,19 +9,20 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <%= render 'layouts/header' %>
-    <div class="container">
-      <% if signed_in? %>
-        Signed in as: <%= current_user.email %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <% end %>
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%=
+    <div class="main-container">
+      <%= render 'layouts/header' %>
+      <div class="container">
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= button_to 'Sign out', sign_out_path, method: :delete %>
+        <% end %>
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%=
       message %></div>
-      <% end %>
-      <%= yield %>
-      <%= render 'layouts/footer' %>
-      <!-- <%= debug(params) if Rails.env.development? %> -->
-    </div>
-  </body>
-</html>
+        <% end %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+        <!-- <%= debug(params) if Rails.env.development? %> -->
+      </div>
+    </body>
+  </html>
