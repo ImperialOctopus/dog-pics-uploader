@@ -29,7 +29,7 @@ class SubmissionsController < ApplicationController
     @submission = Submission.find(params[:id])
     if @submission.update(submission_params)
       flash[:success] = 'Update saved'
-      redirect_to @submission
+      redirect_to :index
     else
       render 'edit'
     end

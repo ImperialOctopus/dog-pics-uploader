@@ -4,16 +4,19 @@ Rails
   .draw do
     # get 'submissions/show'
     # get 'submissions/new'
-    root 'static_pages#index'
+    root 'static_pages#index', as: :index
 
     get '/thanks' => 'static_pages#thanks', :as => :thanks
 
     # Submissions routing
 
-    resources :submissions, only: %i[new create]
-
     constraints Clearance::Constraints::SignedIn.new do
       resources :submissions
+    end
+
+    constraints Clearance::Constraints::SignedOut.new do
+      resources :submissions, only: %i[new create]
+      resources :submissions, to: redirect('/sign_in')
     end
 
     # Clearance routing
@@ -30,8 +33,6 @@ Rails
                controller: 'clearance/passwords',
                only: %i[edit update]
     end
-
-    get '/admin', to: redirect('/sign_in')
 
     get '/sign_in' => 'clearance/sessions#new', :as => 'sign_in'
     delete '/sign_out' => 'clearance/sessions#destroy', :as => 'sign_out'
