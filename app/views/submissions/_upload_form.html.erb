@@ -1,0 +1,12 @@
+<%= form_with(model: @submission, local: true) do |f| %>
+  <%= render 'shared/error_messages' %>
+  <%= f.label :name, 'Name for attribution (optional)' %>
+  <%= f.text_field :name %>
+  <%= f.label :breed, 'Breed of dog in the photo (optional)' %>
+  <%= f.text_field :breed %>
+  <%= f.label :image, 'Upload Image' %>
+  <%= f.file_field :image, multiple: false, direct_upload: true %>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

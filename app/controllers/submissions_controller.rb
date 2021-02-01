@@ -5,13 +5,15 @@ class SubmissionsController < ApplicationController
 
   def new
     @submission = Submission.new
+    @count = Submission.count
   end
 
   def create
     @submission = Submission.new(submission_params)
+    @count = Submission.count
     if @submission.save
-      flash[:success] = 'Record created'
-      redirect_to :thanks
+      flash[:success] = 'Dog uploaded successfully! Thank you!'
+      redirect_to :index
     else
       render 'new'
     end
@@ -49,6 +51,6 @@ class SubmissionsController < ApplicationController
     # it will return an empty hash.
     params
       .require(:submission)
-      .permit(:name, :email, :breed, :image, :authenticity_token, :commit)
+      .permit(:name, :breed, :image, :authenticity_token, :commit)
   end
 end

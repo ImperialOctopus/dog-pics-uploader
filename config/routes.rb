@@ -4,9 +4,7 @@ Rails
   .draw do
     # get 'submissions/show'
     # get 'submissions/new'
-    root 'static_pages#index', as: :index
-
-    get '/thanks' => 'static_pages#thanks', :as => :thanks
+    root 'submissions#new', as: :index
 
     # Submissions routing
 

@@ -1,16 +1,14 @@
-<h1>Submission#new</h1>
-<%= form_with(model: @submission, local: true) do |f| %>
-  <%= render 'shared/error_messages' %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :breed %>
-  <%= f.text_field :breed %>
-  <%= f.label :image %>
-  <%= f.file_field :image, multiple: false, direct_upload: true %>
-  <%= f.submit 'Submit' %>
-<% end %>
-<%= link_to 'Back', '/' %>
-<%= javascript_pack_tag 'direct_upload' %>
-<%= stylesheet_link_tag 'direct_upload' %>
+<h1>Give Me Your Dogs</h1>
+<section>
+  <p>For my project I'm creating an app to help people learn to recognise different breeds of dog by sight. For that purpose, I need photographs of as many breeds of dog as possible!</p>
+  <p>It would be a huge help if you could upload any pictures of your own dogs that you'd be okay with me using.</p>
+</section>
+<hr/>
+<section>
+  <%= render 'upload_form' %>
+  <%= javascript_pack_tag 'direct_upload' %>
+  <%= stylesheet_link_tag 'direct_upload' %>
+</section>
+<hr/>
+<p class="counter">Total dogs uploaded:
+  <%= @count %></p>
