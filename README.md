@@ -44,6 +44,7 @@ RAILS_ENV=production rake db:create db:migrate db:seed
 3. Compile assets:
 
 ```bash
+bundle install
 bin/yarn install
 rake assets:precompile
 ```
