@@ -3,12 +3,15 @@ require 'csv'
 class Submission < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
+  #attr_accessor :privacy_policy
+
   has_one_attached :image
 
   validates :name, presence: false, length: { maximum: 255 }
   validates :image,
             presence: true,
             blob: { content_type: :image, size_range: 0..10.megabytes }
+  validates :privacy_policy, acceptance: true
 
   #validates :breed, presence: true
 

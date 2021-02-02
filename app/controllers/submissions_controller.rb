@@ -84,6 +84,13 @@ class SubmissionsController < ApplicationController
     # it will return an empty hash.
     params
       .require(:submission)
-      .permit(:name, :breed, :image, :commit, :authenticity_token)
+      .permit(
+        :name,
+        :breed,
+        :image,
+        :commit,
+        :authenticity_token,
+        :privacy_policy,
+      )
   end
 end

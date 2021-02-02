@@ -4,6 +4,10 @@
   <%= f.text_field :name %>
   <%= f.label :breed, 'Breed of dog in the photo (optional)' %>
   <%= f.text_field :breed %>
+  <p>
+    <%= f.check_box :privacy_policy %>
+    <%= f.label :privacy_policy, "I agree to the #{link_to('privacy policy', 'privacy_policy.md', target: :_blank)}.".html_safe %>
+  </p>
   <%= f.label :image, 'Upload Image' %>
   <%= f.file_field :image, multiple: false, direct_upload: true %>
   <p>
