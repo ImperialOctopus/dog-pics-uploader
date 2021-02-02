@@ -102,6 +102,7 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
+    libv8 (3.16.14.19-x86_64-linux)
     listen (3.4.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -162,6 +163,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    ref (2.0.0)
     regexp_parser (1.8.2)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
@@ -189,6 +191,9 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
+    therubyracer (0.12.3)
+      libv8 (~> 3.16.14.15)
+      ref
     thor (1.0.1)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -236,6 +241,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   sqlite3 (~> 1.4)
+  therubyracer
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
