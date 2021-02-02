@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Setup
 
-Things you may want to cover:
+0. Install ruby (>=3.0.0).
 
-* Ruby version
+1. Install rails.
 
-* System dependencies
+```bash
+$ gem install rails
+```
 
-* Configuration
+2. Get dependencies by running bundle install and npm install in the app directory.
 
-* Database creation
+```bash
+$ bundle install
+$ npm install
+```
 
-* Database initialization
+3. Run database migrations.
 
-* How to run the test suite
+```bash
+$ rails db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Run the server.
 
-* Deployment instructions
-
-* ...
+```bash
+$ rails server
+```
