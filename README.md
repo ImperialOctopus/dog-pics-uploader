@@ -28,3 +28,24 @@ $ rails db:migrate
 ```bash
 $ rails server
 ```
+
+5. Setup for production:
+
+- Copy master.key into /config, or generate a new key.
+- Create the database:
+
+```
+RAILS_ENV=production rake db:create db:migrate db:seed
+```
+
+- Compile assets:
+
+```
+
+```
+
+- Run the server:
+
+```
+
+```
