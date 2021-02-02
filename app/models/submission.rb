@@ -6,7 +6,9 @@ class Submission < ApplicationRecord
   has_one_attached :image
 
   validates :name, presence: false, length: { maximum: 255 }
-  validates :image, presence: true. blob: { content_type: :image, size_range: 0..10.megabytes }
+  validates :image,
+            presence: true,
+            blob: { content_type: :image, size_range: 0..10.megabytes }
 
   #validates :breed, presence: true
 
