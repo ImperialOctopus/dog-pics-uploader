@@ -28,6 +28,8 @@ gem 'active_storage-send_zip'
 
 gem 'clearance', '~> 1.12', '>= 1.12.1'
 
+gem 'therubyracer',  platforms: :ruby
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
