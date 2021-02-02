@@ -27,6 +27,7 @@ gem 'image_processing', '~> 1.2'
 gem 'active_storage-send_zip'
 
 gem 'clearance', '~> 1.12', '>= 1.12.1'
+gem 'activestorage-validator'
 
 gem 'therubyracer',  platforms: :ruby
 
