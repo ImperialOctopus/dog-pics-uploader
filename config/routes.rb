@@ -9,10 +9,12 @@ Rails
     # Submissions routing
 
     constraints Clearance::Constraints::SignedIn.new do
+      get 'submissions/export' => 'submissions#export', :as => 'export'
       resources :submissions
     end
 
     constraints Clearance::Constraints::SignedOut.new do
+      get 'submissions/export', to: redirect('/sign_in')
       resources :submissions, only: %i[new create]
       resources :submissions, to: redirect('/sign_in')
     end

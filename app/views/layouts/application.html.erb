@@ -23,6 +23,7 @@
             Signed in as: <%= current_user.email %>
             <%= link_to "Home", "/submissions/new" %>
             <%= link_to "List", "/submissions" %>
+            <%= link_to "Export", :export %>
             <%= button_to 'Sign out', sign_out_path, method: :delete %>
           </p>
         <% end %>
